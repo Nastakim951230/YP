@@ -41,11 +41,11 @@
             </Grid>
             <Grid Grid.Column="1">
                 <StackPanel>
-                    <TextBox Name="Nomer"></TextBox>
-                    <TextBox Name="Password"/>
+                    <TextBox Name="Nomer" PreviewKeyDown="Nomer_PreviewKeyDown"></TextBox>
+                    <TextBox Name="Password" IsEnabled="False" PreviewKeyDown="Password_PreviewKeyDown" />
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Width="200" Name="kod"></TextBox>
-                        <Button  Width="50" Height="30" Name="otpravka" Background="White" >
+                        <TextBox Width="200" Name="kod" IsEnabled="False"></TextBox>
+                        <Button  Width="50" Height="30" Name="otpravka" IsEnabled="False" Background="White" >
                             <Image  Source="../Image/На авторизацию_Обновление кода.jpg"/>
                             
                         </Button>
