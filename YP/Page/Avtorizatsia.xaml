@@ -45,11 +45,12 @@
                     <TextBox Name="Password" IsEnabled="False" PreviewKeyDown="Password_PreviewKeyDown" />
                     <StackPanel Orientation="Horizontal">
                         <TextBox Width="200" Name="kod" IsEnabled="False"></TextBox>
-                        <Button  Width="50" Height="30" Name="otpravka" IsEnabled="False" Background="White" >
+                        <Button  Width="50" Height="30" Name="otpravka" Click="otpravka_Click" IsEnabled="False" Background="White" >
                             <Image  Source="../Image/На авторизацию_Обновление кода.jpg"/>
                             
                         </Button>
                     </StackPanel>
+                    <TextBlock Name="time" Visibility="Collapsed" Style="{StaticResource text_time}">Время закончиться через: 10</TextBlock>
                 </StackPanel>
             </Grid>
         </Grid>
