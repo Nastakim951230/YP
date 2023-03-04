@@ -35,8 +35,9 @@ namespace YP.Page
         public Avtorizatsia()
         {
             InitializeComponent();
-          
-            
+            disTimer.Interval = TimeSpan.FromSeconds(1);
+            disTimer.Tick += dtTicker;
+
         }
         private void dtTicker(object sender, EventArgs e)
         {
@@ -94,8 +95,7 @@ namespace YP.Page
             if (result == MessageBoxResult.OK)
             {
                 time.Visibility = Visibility.Visible;
-                disTimer.Interval = TimeSpan.FromSeconds(1);
-                disTimer.Tick += dtTicker;
+              
                 disTimer.Start();
             }
 
@@ -119,7 +119,7 @@ namespace YP.Page
 
         private void otpravka_Click(object sender, RoutedEventArgs e)
         {
-            
+            time.Text = "Время закончиться через: 10";
             text = "";
             KOD();
 
