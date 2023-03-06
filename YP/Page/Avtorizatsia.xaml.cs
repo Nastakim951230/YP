@@ -45,9 +45,12 @@ namespace YP.Page
             {
                 otpravka.IsEnabled = true;
                 kod.IsEnabled = false;
+                Vhod.IsEnabled = false;
                 disTimer.Stop();
                 sec = 10;
-               
+                time.Text = "Время закончилось";
+                
+
             }
             else
             {
@@ -75,6 +78,7 @@ namespace YP.Page
         {
             otpravka.IsEnabled=false;
             kod.IsEnabled = true;
+            Vhod.IsEnabled = true;
             kod.Focus();
             Random random = new Random();
             text = String.Empty;
@@ -121,8 +125,45 @@ namespace YP.Page
         {
             time.Text = "Время закончиться через: 10";
             text = "";
+            kod.Text = "";
             KOD();
 
+        }
+
+        private void Vhod_Click(object sender, RoutedEventArgs e)
+        {
+            if(kod.Text ==text)
+                {
+                disTimer.Stop();
+                sec = 10;
+                time.Visibility = Visibility.Collapsed;
+                MessageBox.Show("правильно");
+            }
+            else
+            {
+                MessageBox.Show("Вы неверно ввели код");
+                disTimer.Stop();
+                sec = 10;
+                time.Text = "Время закончиться через: 10";
+                text = "";
+                kod.Text = "";
+                KOD();
+            }
+        }
+
+        private void Otmena_Click(object sender, RoutedEventArgs e)
+        {
+            disTimer.Stop();
+            time.Text = "Время закончиться через: 10";
+            sec = 10;
+            time.Visibility = Visibility.Collapsed;
+            kod.IsEnabled=false;
+            kod.Text = "";
+            Password.IsEnabled = false;
+            otpravka.IsEnabled = false;
+            Vhod.IsEnabled = false;
+            Password.Text = "";
+            Nomer.Text = "";
         }
     }
 }

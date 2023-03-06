@@ -44,10 +44,10 @@
                     <TextBox Name="Nomer" PreviewKeyDown="Nomer_PreviewKeyDown"></TextBox>
                     <TextBox Name="Password" IsEnabled="False" PreviewKeyDown="Password_PreviewKeyDown" />
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Width="200" Name="kod" IsEnabled="False"></TextBox>
-                        <Button  Width="50" Height="30" Name="otpravka" Click="otpravka_Click" IsEnabled="False" Background="White" >
+                        <TextBox Width="200" x:Name="kod" IsEnabled="False"/>
+                        <Button  Width="50" Height="30" x:Name="otpravka" Click="otpravka_Click" IsEnabled="False" Background="White" >
                             <Image  Source="../Image/На авторизацию_Обновление кода.jpg"/>
-                            
+
                         </Button>
                     </StackPanel>
                     <TextBlock Name="time" Visibility="Collapsed" Style="{StaticResource text_time}">Время закончиться через: 10</TextBlock>
@@ -56,8 +56,8 @@
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Name="Otmena">Отмена</Button>
-                <Button Name="Vhod">Вход</Button>
+                <Button Name="Otmena" Click="Otmena_Click">Отмена</Button>
+                <Button Name="Vhod" Click="Vhod_Click" IsEnabled="False">Вход</Button>
             </StackPanel>
         </Grid>
     </Grid>
