@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
@@ -53,6 +54,8 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
@@ -147,6 +150,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\На авторизацию_Обновление кода.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Sotrudnik\Фото для заглушки при отсутствии фото сотрудника.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1516.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1517.png" />
+    <Resource Include="Image\Sotrudnik\ID1518.png" />
+    <Resource Include="Image\Sotrudnik\ID1519.png" />
+    <Resource Include="Image\Sotrudnik\ID1520.png" />
+    <Resource Include="Image\Sotrudnik\ID1521.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1522.png" />
+    <Resource Include="Image\Sotrudnik\ID1523.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1524.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1525.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1526.jpg" />
+    <Content Include="Image\Sotrudnik\ID1527.jfif" />
+    <Resource Include="Image\Sotrudnik\ID1528.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1529.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1530.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1531.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1532.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1533.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1534.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1535.png" />
+    <Resource Include="Image\Sotrudnik\ID1536.png" />
+    <Resource Include="Image\Sotrudnik\ID1537.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1538.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1539.png" />
+    <Resource Include="Image\Sotrudnik\ID1540.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1541.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1542.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1543.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1544.jpg" />
+    <Resource Include="Image\Sotrudnik\ID1545.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

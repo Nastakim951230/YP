@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP"
         mc:Ignorable="d"
-        Title="OSS/BSS" Height="450" Width="800" Icon="./Image/image.ico">
+        Title="Телеком Нева Связь" Height="450" Width="800" Icon="./Image/image.ico">
     <Grid>
         <Frame Name="perhod" NavigationUIVisibility="Hidden"/>
     </Grid>

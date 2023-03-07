@@ -25,6 +25,8 @@ namespace YP.Page
     /// </summary>
     public partial class Avtorizatsia
     {
+
+        
         public static string nomer = "89063490993";
         public static string password = "01";
         string text = String.Empty;
