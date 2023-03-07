@@ -26,17 +26,15 @@ namespace YP.Page
     public partial class Avtorizatsia
     {
 
-        
-        public static string nomer = "89063490993";
-        public static string password = "01";
         string text = String.Empty;
        
         DispatcherTimer disTimer = new DispatcherTimer();
         int sec = 10;
-
+        Sotrudnik sotrudnik;
         public Avtorizatsia()
         {
             InitializeComponent();
+
             disTimer.Interval = TimeSpan.FromSeconds(1);
             disTimer.Tick += dtTicker;
 
@@ -64,7 +62,9 @@ namespace YP.Page
         {
             if(e.Key == Key.Enter)
             {
-                if(nomer ==Nomer.Text)
+                Sotrudnik sotrudnik = Class.ClassBase.DB.Sotrudnik.FirstOrDefault(x => x.NomerTelefon == Nomer.Text);
+            
+                if(sotrudnik!=null)
                 {
                     Password.IsEnabled=true;
                     Password.Focus();
@@ -110,7 +110,8 @@ namespace YP.Page
         {
             if (e.Key == Key.Enter)
             {
-                if (password == Password.Text)
+                Sotrudnik sotrudnik = Class.ClassBase.DB.Sotrudnik.FirstOrDefault(x => x.NomerTelefon == Nomer.Text &&x.Password==Password.Text);
+                if (sotrudnik!=null)
                 {
                     
                     KOD();

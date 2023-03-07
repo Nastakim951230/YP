@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CRM23Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="SotrudnikID" />
+          </Key>
+          <Property Name="SotrudnikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="NomerTelefon" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Role" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Sotrudnik_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Sotrudnik">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CRM23ModelContainer">
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Sotrudnik_Role" Association="Self.FK_Sotrudnik_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRM23Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Sotrudnik" Relationship="Self.FK_Sotrudnik_Role" FromRole="Role" ToRole="Sotrudnik" />
+        </EntityType>
+        <EntityType Name="Sotrudnik">
+          <Key>
+            <PropertyRef Name="SotrudnikID" />
+          </Key>
+          <Property Name="SotrudnikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NomerTelefon" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role1" Relationship="Self.FK_Sotrudnik_Role" FromRole="Sotrudnik" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Sotrudnik_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Sotrudnik">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Base_DB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Sotrudnik" EntityType="Self.Sotrudnik" />
+          <AssociationSet Name="FK_Sotrudnik_Role" Association="Self.FK_Sotrudnik_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Sotrudnik" EntitySet="Sotrudnik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CRM23ModelContainer" CdmEntityContainer="Base_DB">
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="CRM23Model.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sotrudnik">
+            <EntityTypeMapping TypeName="CRM23Model.Sotrudnik">
+              <MappingFragment StoreEntitySet="Sotrudnik">
+                <ScalarProperty Name="SotrudnikID" ColumnName="SotrudnikID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="NomerTelefon" ColumnName="NomerTelefon" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

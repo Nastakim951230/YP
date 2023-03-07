@@ -23,6 +23,7 @@ namespace YP
         public MainWindow()
         {
             InitializeComponent();
+            Class.ClassBase.DB = new Base_DB();
             perhod.Navigate(new Page.Avtorizatsia());
             ClassPage.perehod = perhod;
 
