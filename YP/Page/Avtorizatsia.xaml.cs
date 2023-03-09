@@ -140,7 +140,7 @@ namespace YP.Page
                 disTimer.Stop();
                 sec = 10;
                 time.Visibility = Visibility.Collapsed;
-                MessageBox.Show("правильно");
+                MessageBox.Show("Вы зашли");
             }
             else
             {
