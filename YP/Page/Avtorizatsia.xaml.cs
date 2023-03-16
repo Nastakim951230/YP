@@ -29,7 +29,7 @@ namespace YP.Page
         string text = String.Empty;
        
         DispatcherTimer disTimer = new DispatcherTimer();
-        int sec = 10;
+        int sec = 10;//переменная для времени
         Sotrudnik sotrudnik;
         public Avtorizatsia()
         {
@@ -39,6 +39,7 @@ namespace YP.Page
             disTimer.Tick += dtTicker;
 
         }
+        //Таймер
         private void dtTicker(object sender, EventArgs e)
         {
             if(sec==0)
@@ -58,6 +59,7 @@ namespace YP.Page
                 time.Text = "Время закончиться через:" + sec;
             }
         }
+        //Проверка номера
         private void Nomer_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
@@ -75,7 +77,7 @@ namespace YP.Page
                 }
             }
         }
-
+        //Создание кода
         public void KOD()
         {
             otpravka.IsEnabled=false;
@@ -106,6 +108,7 @@ namespace YP.Page
             }
 
         }
+        //Проверка пароля 
         private void Password_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -123,7 +126,7 @@ namespace YP.Page
                 }
             }
         }
-
+        //Обновление кода
         private void otpravka_Click(object sender, RoutedEventArgs e)
         {
             time.Text = "Время закончиться через: 10";
@@ -132,7 +135,7 @@ namespace YP.Page
             KOD();
 
         }
-
+        //Вход
         private void Vhod_Click(object sender, RoutedEventArgs e)
         {
             if(kod.Text ==text)
@@ -154,6 +157,7 @@ namespace YP.Page
             }
         }
 
+        //Удаление данных из TextBlock
         private void Otmena_Click(object sender, RoutedEventArgs e)
         {
             disTimer.Stop();
